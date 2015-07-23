@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Fuel Efficiency Estimator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Car Fuel Efficiency Estimator">
+  <meta name="author" content="Carolyn Duby">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Car Fuel Efficiency Estimator</h1>
+    <h2>Press Page Down or Down Arrow to Advance Slides</h2>
+    <p>Carolyn Duby<br/>Coursera</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Market Demands Drive Greater Car Fuel Efficiency</p>
+
+<ul>
+<li>Government requirements i.e. <a href="https://en.wikipedia.org/wiki/Corporate_Average_Fuel_Economy">CAFE</a></li>
+<li>Environmentally Aware Consumers</li>
+<li>Competitive Advantage</li>
+</ul></li>
+<li><p>Car Fuel Efficiency Estimator</p>
+
+<ul>
+<li>Input Transmission Type, Weight, and Quarter Mile Time</li>
+<li>Predicts fuel efficiency range using linear regression</li>
+</ul></li>
+<li><p>Applications - Car Design and Evaluation</p>
+
+<ul>
+<li>How fast can I make the car and still meet required fuel effiency?</li>
+<li>Is actual car fuel efficiency within predicted range?</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Car Fuel Efficiency Estimator</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="https://cduby-dscience.shinyapps.io/FuelEfficiencyEstimator">https://cduby-dscience.shinyapps.io/FuelEfficiencyEstimator</a>
+<img src="screenshot_fe.jpg" alt="screenshot"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Instructions</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Input car attributes on left side of screen
+
+<ul>
+<li>Select Transmission type, Weight and Quarter Mile Time</li>
+</ul></li>
+<li>Fuel Efficency Estimation displayed in upper right of screen
+
+<ul>
+<li>Predict car fuel efficency and 95% prediction interval</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Linear Regression Model</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">data(mtcars)
+model &lt;- lm(mpg ~ factor(am) + wt + qsec, mtcars)
+</code></pre>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">Estimate</th>
+<th align="right">Std. Error</th>
+<th align="right">t value</th>
+<th align="right">Pr(&gt;&#124;t&#124;)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">(Intercept)</td>
+<td align="right">9.617781</td>
+<td align="right">6.9595930</td>
+<td align="right">1.381946</td>
+<td align="right">0.1779152</td>
+</tr>
+<tr>
+<td align="left">factor(am)1</td>
+<td align="right">2.935837</td>
+<td align="right">1.4109045</td>
+<td align="right">2.080819</td>
+<td align="right">0.0467155</td>
+</tr>
+<tr>
+<td align="left">wt</td>
+<td align="right">-3.916504</td>
+<td align="right">0.7112016</td>
+<td align="right">-5.506882</td>
+<td align="right">0.0000070</td>
+</tr>
+<tr>
+<td align="left">qsec</td>
+<td align="right">1.225886</td>
+<td align="right">0.2886696</td>
+<td align="right">4.246676</td>
+<td align="right">0.0002162</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Car Fuel Efficiency Estimator'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Instructions'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Linear Regression Model'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

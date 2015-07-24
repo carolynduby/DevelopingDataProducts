@@ -24,7 +24,7 @@ knit        : slidify::knit2slides
     * Predicts fuel efficiency range using linear regression
     
 * Applications - Car Design and Evaluation
-    * How fast can I make the car and still meet required fuel effiency?
+    * How can I make a fast car that meets required fuel effiency?
     * Is actual car fuel efficiency within predicted range?
 
 --- .class #id 
